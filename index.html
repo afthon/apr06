@@ -5,19 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <title>ゆるふわ</title>
 
-<script type="text/javascript">
-$(function(){
-    $("#btn-upload").change(function(){
-        $("#mask-btn-upload").val($("#btn-upload").val());
-    });
-    $("#mask-btn-upload").click(function(){
-        $("#btn-upload").click();
-    });
-});
-</script>
 </header>
 <body>
 
@@ -44,5 +33,19 @@ $(function(){
 </div>
 </div>
 <!-- // footer -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#btn-upload").change(function(){
+        $("#mask-btn-upload").val($("#btn-upload").val());
+        $("#btn-upload").click();
+    });
+    /*
+    $("#mask-btn-upload").click(function(){
+        $("#btn-upload").click();
+    });
+    */
+});
+</script>
 </body>
 </html>

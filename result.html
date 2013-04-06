@@ -45,7 +45,14 @@
       })();
       $('#face').attr('src',queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
       $('#keywords').text(decodeURI(queries['keyword']));
-   });
+      $.ajax({
+        type:"GET",
+        url: url,
+        data:{key:'91376b328bc70d19',format:'json',keyword:decodeURI(queries['keyword'])},
+        success: function(msg,status){
+        console.log(msg);
+        }
+       });
 </script>
 </body>
 </html>

@@ -106,3 +106,10 @@ h1 {
 .btn-mask span:hover {
   /*background-position:left bottom;*/
 }
+
+/* line 40, ../sass/main.scss */
+#upload {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}

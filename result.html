@@ -12,12 +12,19 @@
 
 <!-- content -->
 <div id="content">
+    <img id='face' alt="hoge"> 
+<div id="facearea">
+    
+</div>
 
 <div id="keywords">
 </div>
 
 <div id="salon">
-    <img id='face' alt="hoge"> 
+    <a href="http://beauty.hotpepper.jp/slnH000205998/">
+        <div id="salon-image"></div>
+        <div id="salon-name></div>
+    </a>
 </div>
 
 </div>
@@ -45,9 +52,12 @@
       })();
       $('#face').attr('src',queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
       $('#keywords').text(decodeURI(queries['keyword']));
-      $.getJSON('http://webservice.recruit.co.jp/beauty/salon/v1?format=jsonp&key=91376b328bc70d19&keyword='+queries['keyword']+'&callback=?',
+      $.getJSON('https://app.rakuten.co.jp/services/api/IchibaItem/Search/20120723?format=json&keyword='+queries['keyword']+'&genreId=403770&affiliateId=0ca3304d.a811038d.0ca3304e.80024f1e&applicationId=d259e7faa7a68676a7162c5cc705171f&callback=?',
         function(msg){
           console.log(msg);
+         
+          $('#salon-image').append('<img src="' + msg.results.salon[0].mood[0].photo + '" alt="">');
+          $('#salon-name').append(msg.Items[0].Item.itemName);
        });
   });
 </script>

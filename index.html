@@ -20,7 +20,7 @@
     <span><img src="images/btn_upload.png" width="148" height="148"></span>
         <input type="text" id="mask-btn-upload">
 </label>
-<input type="submit" class="btn" value="髪型メイクアップ">
+<input id='upload' type="submit" class="btn" value="髪型メイクアップ">
 </form>
 </div>
 </div>
@@ -38,6 +38,7 @@
 $(function(){
     $("#btn-upload").change(function(){
         $("#mask-btn-upload").val($("#btn-upload").val());
+        $("#upload").click();
     });
     $("#mask-btn-upload").click(function(){
         $("#btn-upload").click();

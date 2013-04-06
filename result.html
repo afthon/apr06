@@ -35,7 +35,7 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
-      var getQuery = function(){
+      var queries = (function(){
         var query = window.location.search.substr(1);
         var data = query.split("&");
         var result = {};
@@ -44,8 +44,9 @@
           result[item[0]] = item[1];
         }
         return result;
-      }
-      console.log(getQuery());
+      })();
+      console.log(decodeURI(queries['url']));
+      console.log(decodeURI(queries['keyword']));
    });
 </script>
 </body>

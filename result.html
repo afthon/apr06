@@ -55,8 +55,7 @@
       $.getJSON('https://app.rakuten.co.jp/services/api/IchibaItem/Search/20120723?format=json&keyword='+queries['keyword']+'&genreId=403770&affiliateId=0ca3304d.a811038d.0ca3304e.80024f1e&applicationId=d259e7faa7a68676a7162c5cc705171f&callback=?',
         function(msg){
           console.log(msg);
-         
-          $('#item-image').append('<img src="' + msg.results.item[0].mood[0].photo + '" alt="">');
+          $('#item-image').append('<img src="' + msg.Items[0].Item.mediumImageUrl[0].imageUrl + '" alt="">');
           $('#item-name').append(msg.Items[0].Item.itemName);
        });
   });

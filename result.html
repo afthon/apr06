@@ -45,7 +45,7 @@
       })();
       $('#face').attr('src',queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
       $('#keywords').text(decodeURI(queries['keyword']));
-      $.ajax({
+      $.getJSON({
         type:"GET",
         url: 'http://webservice.recruit.co.jp/beauty/salon/v1',
         data:{

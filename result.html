@@ -45,7 +45,7 @@
         }
         return result;
       })();
-      console.log(queries['url'].replaceAll('%2F','/').replaceAll('%3A',':'));
+      console.log(queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
       console.log(decodeURI(queries['keyword']));
    });
 </script>

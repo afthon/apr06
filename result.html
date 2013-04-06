@@ -45,7 +45,7 @@
       })();
       $('#face').attr('src',queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
       $('#keywords').text(decodeURI(queries['keyword']));
-      $.getJSON('http://webservice.recruit.co.jp/beauty/salon/v1?format=json&key=91376b328bc70d19&keyword='+queries['keyword']+'&callback=?',
+      $.getJSON('http://webservice.recruit.co.jp/beauty/salon/v1?format=jsonp&key=91376b328bc70d19&keyword='+queries['keyword']+'&callback=?',
         function(msg){
           console.log(msg);
        });

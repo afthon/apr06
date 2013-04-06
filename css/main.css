@@ -63,17 +63,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 5, ../sass/main.scss */
+/* line 11, ../sass/main.scss */
 body {
   background: #E3D2B3;
 }
 
-/* line 9, ../sass/main.scss */
+/* line 15, ../sass/main.scss */
 h1 {
   margin-bottom: 20px;
 }
 
-/* line 15, ../sass/main.scss */
+/* line 21, ../sass/main.scss */
 #content .container {
   width: 230px;
   margin: 20px;
@@ -86,12 +86,12 @@ h1 {
   background: #F2FF6F;
 }
 
-/* line 24, ../sass/main.scss */
+/* line 28, ../sass/main.scss */
 #btn-upload, #mask-btn-upload {
   display: none;
 }
 
-/* line 27, ../sass/main.scss */
+/* line 31, ../sass/main.scss */
 .btn-mask span {
   display: block;
   /*background-image:url(../images/btn_upload.png);
@@ -102,14 +102,47 @@ h1 {
   cursor: pointer;
 }
 
-/* line 36, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 .btn-mask span:hover {
   /*background-position:left bottom;*/
 }
 
-/* line 40, ../sass/main.scss */
+/* line 44, ../sass/main.scss */
 #upload {
   overflow: hidden;
   width: 0;
   height: 0;
+}
+
+/* result */
+/* line 52, ../sass/main.scss */
+#facearea {
+  width: 230px;
+  margin: 20px;
+  padding: 20px;
+  -webkit-border-radius: 5px 0;
+  -moz-border-radius: 5px 5px / 0 0;
+  border-radius: 5px 5px / 0 0;
+  margin-bottom: 0;
+  background: #333;
+  text-align: center;
+}
+
+/* line 60, ../sass/main.scss */
+#keywords {
+  width: 230px;
+  margin: 20px;
+  padding: 20px;
+  margin: 0 20px;
+  background: #fff;
+}
+
+/* line 66, ../sass/main.scss */
+#item {
+  width: 230px;
+  margin: 20px;
+  padding: 20px;
+  margin: 0 20px;
+  background: #fff;
+  @inclulde border-radius(0 0, 5px 5px);
 }

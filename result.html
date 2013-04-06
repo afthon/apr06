@@ -12,16 +12,16 @@
 
 <!-- content -->
 <div id="content">
-    <img id='face' alt="hoge"> 
+
 <div id="facearea">
-    
+    <img id='face' alt="hoge"> 
 </div>
 
 <div id="keywords">
 </div>
 
 <div id="item">
-  <a id="item-link" href="http://hb.afl.rakuten.co.jp/hgc/04134abe.06846dea.0c033354.7fa2030f/?pc=http%3a%2f%2franking.rakuten.co.jp%2fdaily%2f403770%2f%3fscid%3daf_link_urltxt&amp;m=http%3a%2f%2fm.rakuten.co.jp" target="_blank">
+    <a id="item-link" href="http://hb.afl.rakuten.co.jp/hgc/04134abe.06846dea.0c033354.7fa2030f/?pc=http%3a%2f%2franking.rakuten.co.jp%2fdaily%2f403770%2f%3fscid%3daf_link_urltxt&amp;m=http%3a%2f%2fm.rakuten.co.jp" target="_blank">
         <div id="item-image"></div>
         <div id="item-name"></div>
     </a>
@@ -52,7 +52,7 @@
         return result;
       })();
       $('#face').attr('src',queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
-      $('#keywords').text(decodeURI(queries['keyword']));
+      $('#keywords').append("<span>" + decodeURI(queries['keyword']) + "</span>");
       $.getJSON('https://app.rakuten.co.jp/services/api/IchibaItem/Search/20120723?format=json&keyword='+queries['keyword']+'&genreId=403770&affiliateId=0ca3304d.a811038d.0ca3304e.80024f1e&applicationId=d259e7faa7a68676a7162c5cc705171f&callback=?',
         function(msg){
           res = msg;

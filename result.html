@@ -20,10 +20,10 @@
 <div id="keywords">
 </div>
 
-<div id="salon">
-    <a href="http://beauty.hotpepper.jp/slnH000205998/">
-        <div id="salon-image"></div>
-        <div id="salon-name></div>
+<div id="item">
+  <a id="item-link" href="http://hb.afl.rakuten.co.jp/hgc/04134abe.06846dea.0c033354.7fa2030f/?pc=http%3a%2f%2franking.rakuten.co.jp%2fdaily%2f403770%2f%3fscid%3daf_link_urltxt&amp;m=http%3a%2f%2fm.rakuten.co.jp" target="_blank">
+        <div id="item-image"></div>
+        <div id="item-name"></div>
     </a>
 </div>
 
@@ -39,6 +39,7 @@
 <!-- // footer -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
+  var res = {};
   $(document).ready(function(){
       var queries = (function(){
         var query = window.location.search.substr(1);
@@ -54,10 +55,10 @@
       $('#keywords').text(decodeURI(queries['keyword']));
       $.getJSON('https://app.rakuten.co.jp/services/api/IchibaItem/Search/20120723?format=json&keyword='+queries['keyword']+'&genreId=403770&affiliateId=0ca3304d.a811038d.0ca3304e.80024f1e&applicationId=d259e7faa7a68676a7162c5cc705171f&callback=?',
         function(msg){
-          console.log(msg);
-         
-          $('#salon-image').append('<img src="' + msg.results.salon[0].mood[0].photo + '" alt="">');
-          $('#salon-name').append(msg.Items[0].Item.itemName);
+          res = msg;
+          $('#item-image').append('<img src="' + res.Items[0].Item.mediumImageUrls[0].imageUrl+ '" alt="">');
+          $('#item-name').append(msg.Items[0].Item.itemName);
+          $('#item-link').attr('href',res.Items[0].Item.affiliateUrl);
        });
   });
 </script>

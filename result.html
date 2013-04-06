@@ -20,10 +20,10 @@
 <div id="keywords">
 </div>
 
-<div id="salon">
+<div id="item">
     <a href="http://beauty.hotpepper.jp/slnH000205998/">
-        <div id="salon-image"></div>
-        <div id="salon-name></div>
+        <div id="item-image"></div>
+        <div id="item-name"></div>
     </a>
 </div>
 
@@ -56,8 +56,8 @@
         function(msg){
           console.log(msg);
          
-          $('#salon-image').append('<img src="' + msg.results.salon[0].mood[0].photo + '" alt="">');
-          $('#salon-name').append(msg.Items[0].Item.itemName);
+          $('#item-image').append('<img src="' + msg.results.item[0].mood[0].photo + '" alt="">');
+          $('#item-name').append(msg.Items[0].Item.itemName);
        });
   });
 </script>

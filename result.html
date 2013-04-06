@@ -47,10 +47,13 @@
       $('#keywords').text(decodeURI(queries['keyword']));
       $.ajax({
         type:"GET",
-        url: url,
-        data:{key:'91376b328bc70d19',format:'json',keyword:decodeURI(queries['keyword'])},
+        url: 'http://webservice.recruit.co.jp/beauty/salon/v1',
+        data:{
+              key:'91376b328bc70d19',
+              format:'json',
+              keyword:decodeURI(queries['keyword'])},
         success: function(msg,status){
-        console.log(msg);
+          console.log(msg);
         }
        });
 </script>

@@ -35,8 +35,8 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
-      var query = function(){
-        var query = location.search.substr(1);
+      var getQuery = function(){
+        var query = window.location.search.substr(1);
         var data = query.split("&");
         var result = {};
         for(var i=0; i<data.length; i++) {
@@ -45,7 +45,7 @@
         }
         return result;
       }
-      console.log(query());
+      console.log(getQuery());
    });
 </script>
 </body>

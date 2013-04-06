@@ -14,12 +14,10 @@
 <div id="content">
 
 <div id="keywords">
-    <p>ゆるふわ</p>
-    <p>ガーリー</p>
 </div>
 
 <div id="salon">
-    <img src="/hoge" alt="hoge"> 
+    <img id='face' alt="hoge"> 
 </div>
 
 </div>
@@ -32,5 +30,26 @@
 </div>
 </div>
 <!-- // footer -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+      var queries = (function(){
+        var query = window.location.search.substr(1);
+        var data = query.split("&");
+        var result = {};
+        for(var i=0; i<data.length; i++) {
+          var item = data[i].split("=");
+          result[item[0]] = item[1];
+        }
+        return result;
+      })();
+      $('#face').attr('src',queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
+      $('#keywords').text(decodeURI(queries['keyword']));
+      $.getJSON('http://webservice.recruit.co.jp/beauty/salon/v1?format=jsonp&key=91376b328bc70d19&keyword='+queries['keyword']+'&callback=?',
+        function(msg){
+          console.log(msg);
+       });
+  });
+</script>
 </body>
 </html>

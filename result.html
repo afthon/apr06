@@ -19,7 +19,7 @@
 </div>
 
 <div id="salon">
-    <img src="/hoge" alt="hoge"> 
+    <img id='face' alt="hoge"> 
 </div>
 
 </div>
@@ -45,7 +45,7 @@
         }
         return result;
       })();
-      console.log(queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
+      $('#face').src(queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
       console.log(decodeURI(queries['keyword']));
    });
 </script>

@@ -14,8 +14,6 @@
 <div id="content">
 
 <div id="keywords">
-    <p>ゆるふわ</p>
-    <p>ガーリー</p>
 </div>
 
 <div id="salon">
@@ -45,8 +43,8 @@
         }
         return result;
       })();
-      $('#face').src(queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
-      console.log(decodeURI(queries['keyword']));
+      $('#face').attr('src',queries['url'].replace(/%2F/g,'/').replace(/%3A/g,':'));
+      $('#keywords').text(decodeURI(queries['keyword']));
    });
 </script>
 </body>

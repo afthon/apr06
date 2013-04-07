@@ -5,19 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <link href="css/main.css" rel="stylesheet" type="text/css" media="screen">
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <title>ゆるふわ</title>
 
-<script type="text/javascript">
-$(function(){
-    $("#btn-upload").change(function(){
-        $("#mask-btn-upload").val($("#btn-upload").val());
-    });
-    $("#mask-btn-upload").click(function(){
-        $("#btn-upload").click();
-    });
-});
-</script>
 </header>
 <body>
 
@@ -25,12 +14,14 @@ $(function(){
 <div id="content">
 <div class="container">
 <h1><img src="images/img_title.png" width="230" height="50" alt="ゆるふわモテ髪 MAKE ME A REAL BOY"></h1>
-<input type="file" accept="image/*" id="btn-upload" class="file">
+<form action="http://133.242.130.19/" method="POST" enctype="multipart/form-data">
+<input type="file" accept="image/*" id="btn-upload" class="file" name="userfile">
 <label class="btn-mask">
     <span><img src="images/btn_upload.png" width="148" height="148"></span>
-        <input type="text" id="mask-btn-upload">
+    <input type="text" id="mask-btn-upload">
 </label>
-<button type="submit" class="btn">髪型メイクアップ！</button>
+<input id='upload' type="submit" class="btn" style="position:absolute;left:-9999px">
+</form>
 </div>
 </div>
 <!-- content -->
@@ -42,6 +33,16 @@ $(function(){
 </div>
 </div>
 <!-- // footer -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#btn-upload").change(function(){
+        $("#upload").click();
+    });
+    $("#mask-btn-upload").click(function(){
+        $("#btn-upload").click();
+    });
+});
+</script>
 </body>
 </html>
-                        
